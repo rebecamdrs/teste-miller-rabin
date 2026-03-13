@@ -10,9 +10,9 @@ def medir_tempo_preteste(numero):
     return fim - inicio
 
 
-def medir_tempo_miller_rabin(numero):
+def medir_tempo_miller_rabin(numero, k):
     inicio = temporizador.perf_counter()
-    #miller_rabin(numero)
+    #miller_rabin(numero, k)
     fim = temporizador.perf_counter()
     return fim - inicio
 
@@ -21,15 +21,7 @@ def gerar_bigint(bits):
     return randomizador.getrandbits(bits)
 
 
-def executar_teste(numero):
-    tempo_preteste = medir_tempo_preteste(numero)
-    tempo_miller_rabin = 0
-    if pre_teste(numero):
-        tempo_miller_rabin = medir_tempo_miller_rabin(numero)
-    return tempo_preteste, tempo_miller_rabin
-
-
-def benchmark(lista_bits, repeticoes=10):
+def benchmark(lista_bits, repeticoes=10, k=5):
     numeros = []
     medias_preteste = []
     medias_miller_rabin = []
@@ -44,14 +36,16 @@ def benchmark(lista_bits, repeticoes=10):
         numeros.append(numero)
 
         for _ in range(repeticoes):
-            tempo1 = medir_tempo_preteste(numero)
-            tempo2 = 0
-            if pre_teste(numero):
-                tempo2 = medir_tempo_miller_rabin(numero)
+            # Pré-teste
+            tempo_pre = medir_tempo_preteste(numero)
+            resultado_pre = pre_teste(numero)
 
-            soma_pre += tempo1
-            soma_mr += tempo2
-            soma_total += tempo1 + tempo2
+            # Miller-Rabin
+            tempo_mr = medir_tempo_miller_rabin(numero, k) if resultado_pre else 0
+
+            soma_pre += tempo_pre
+            soma_mr += tempo_mr
+            soma_total += tempo_pre + tempo_mr
 
         medias_preteste.append(soma_pre / repeticoes)
         medias_miller_rabin.append(soma_mr / repeticoes)
@@ -96,14 +90,16 @@ def mostrar_tabela(bits, tempos_preteste, tempos_miller_rabin, tempos_total):
         print(f"{bits[i]:<10}{tempos_preteste[i]:<20.8f}{tempos_miller_rabin[i]:<20.8f}{tempos_total[i]:<15.8f}")
 
 
-def main():
+def main(repeticoes=10, k=5):
     bits = [32, 64, 128, 256, 512, 1024, 2048]
-    numeros, tempos_preteste, tempos_miller_rabin, tempos_total = benchmark(bits)
+    numeros, tempos_preteste, tempos_miller_rabin, tempos_total = benchmark(bits, repeticoes, k)
+
     mostrar_resultados(numeros, bits, tempos_preteste, tempos_miller_rabin)
     mostrar_tabela(bits, tempos_preteste, tempos_miller_rabin, tempos_total)
+
     gerar_grafico(bits, tempos_preteste, tempos_miller_rabin, tempos_total)
     gerar_grafico(bits, tempos_preteste, tempos_miller_rabin, tempos_total, True)
 
 
 if __name__ == "__main__":
-    main()
+    main(repeticoes=10, k=5)
