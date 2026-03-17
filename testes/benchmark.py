@@ -28,6 +28,13 @@ def medir_tempo_miller_rabin(numero, k):
 def gerar_bigint(bits):
     return randomizador.getrandbits(bits)
 
+def gerar_int_que_roda_miller_rabin(bits):
+    primos_pequenos = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97}
+    while True:
+        n = randomizador.getrandbits(bits) | 1
+        if n > 97 and all(n % p != 0 for p in primos_pequenos):
+            return n
+
 def benchmark(lista_bits, repeticoes=10, k=40):
     medias_preteste = []
     medias_miller_rabin = []
@@ -40,7 +47,7 @@ def benchmark(lista_bits, repeticoes=10, k=40):
         soma_total = 0
 
         for _ in range(repeticoes):
-            numero = gerar_bigint(b)
+            numero = gerar_int_que_roda_miller_rabin(b)
 
             # Pré-teste
             resultado_pre, tempo_pre = medir_tempo_preteste(numero)
