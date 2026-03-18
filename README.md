@@ -33,13 +33,13 @@ Para validar a eficiência da implementação, foram realizados testes de perfor
 
 > Os resultados demonstram que o Miller-Rabin mantém uma performance estável mesmo para números que excedem a capacidade de tipos primitivos inteiros padrão, sendo ideal para aplicações em larga escala.
 
-### Créditos
-Gabriela Ramalho
-Lara Soares
-Murilo Jadson
-Rebeca Medeiros
+### 🎓 Créditos
+Gabriela Ramalho, 
+Lara Soares, 
+Murilo Jadson, 
+Rebeca Medeiros,
 Stefany Alves
 
-Disciplina: FMCC2
-Professor: Tiago Massoni
-Instituição: Universidade Federal de Campina Grande (UFCG) 
+**Disciplina:** FMCC2
+**Professor:** Tiago Massoni
+**Instituição:** Universidade Federal de Campina Grande (UFCG) 
