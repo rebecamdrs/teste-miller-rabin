@@ -6,7 +6,7 @@ O Teste de Miller-Rabin é utilizado para determinar se um número é provavelme
 
 ### Por que Miller-Rabin?
 
-- **Eficiência:** Muito mais rápido que testes determinísticos como o Crivo de Eratóstenes para números de centenas de dígitos.
+- **Eficiência:** Muito mais rápido que testes determinísticos.
 
 - **Confiabilidade:** O erro do algoritmo é controlado pelo número de iterações ($k$). A probabilidade de um número composto ser declarado primo é menor que $4^{-k}$.
   
