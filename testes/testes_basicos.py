@@ -4,7 +4,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(os.path.join(BASE_DIR, "src"))
 
-from teste_primalidade.teste_primalidade_miller_rabin import miller_rabin
+from teste_primalidade.teste_primalidade_miller_rabin_est import miller_rabin_estatistico
 
 def teste_primos_conhecidos():
     primos_conhecidos = [7919, 104729, 1299709, 15485863, 32452843]
@@ -16,7 +16,7 @@ def teste_primos_conhecidos():
     
     erros_primos = 0
     for p in primos_conhecidos:
-        resultado = miller_rabin(p, k=1)
+        resultado = miller_rabin_estatistico(p, k=1)
         print(f"{p:<15} | {resultado:<30}")
         if "composto" in resultado:
             erros_primos += 1
@@ -43,7 +43,7 @@ def teste_numeros_carmichael():
         for num in numeros_carmichael:
             for _ in range(rodadas_por_numero):
                 total_testes += 1
-                resultado = miller_rabin(num, k)
+                resultado = miller_rabin_estatistico(num, k)
 
                 if "primo" in resultado:
                     falsos_positivos += 1
