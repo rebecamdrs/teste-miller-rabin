@@ -1,8 +1,14 @@
+<p align="center">
+  <img src="img/banner.png" alt="Banner" width="100%">
+</p>
+
 # Teste de Primalidade de Miller-Rabin
 
-Este repositório apresenta uma implementação do **Teste de Miller-Rabin**, um dos algoritmos probabilísticos mais importantes da **Teoria dos Números** e da **Criptografia Moderna**. O projeto foi desenvolvido como atividade da disciplina **Fundamentos de Matemática para Ciência da Computação II (FMCC II)** da UFCG.
+Este repositório apresenta uma implementação do Teste de Miller-Rabin, um dos algoritmos probabilísticos mais importantes da Teoria dos Números e da Criptografia Moderna. O projeto foi desenvolvido como atividade da disciplina Fundamentos de Matemática para Ciência da Computação II (FMCC II) da UFCG.
 
-## 🔹 Sobre o Projeto
+**🔗 Vídeo sobre o projeto: https://youtu.be/HwLEF9sOifg**
+
+## Sobre o Projeto
 
 O Teste de Miller-Rabin é utilizado para verificar se um número é provavelmente primo.
 Diferente de métodos simples, como divisão por tentativa, esse algoritmo é capaz de trabalhar com números extremamente grandes (*Big Integers*) de forma rápida e eficiente. Por isso, ele é amplamente utilizado em aplicações reais, principalmente na **geração de chaves criptográficas**.
@@ -42,7 +48,7 @@ Para avaliar a eficiência da implementação, foram realizados testes de desemp
 
 > Os resultados mostram que o algoritmo mantém uma performance estável mesmo para números extremamente grandes, tornando-o ideal para aplicações criptográficas.
 
-## ✅ Como Executar
+## ▶️ Como Executar
 
 ### Clonar o repositório
 
@@ -64,7 +70,7 @@ cd src/teste_primalidade
 python main.py
 ```
 
-## 👥 Colaboradores
+## 📜 Créditos
 
 | Nome             | GitHub                                                     |
 | ---------------- | ---------------------------------------------------------- |
