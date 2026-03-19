@@ -47,14 +47,20 @@ Para um número ser considerado primo em relação a uma base $a$ (testemunha), 
 ## 📊 Benchmark e Análise de Performance
 
 Para avaliar a eficiência da implementação, foram realizados testes de desempenho considerando:
-- **Escalabilidade**
+
+- **Escalabilidade**  
   Análise do tempo de execução conforme aumenta o número de bits do número testado.
-- **Precisão vs Tempo**
+
+- **Precisão vs Tempo**  
   Estudo do impacto do número de iterações ($k$) no tempo total de execução.
-- **Comparação de etapas**
+
+- **Comparação de etapas**  
   Diferença de desempenho entre o pré-teste de primalidade e o teste de Miller-Rabin.
 
-| <img src="src/img/grafico.jpeg" width="480"> | <img src="src/img/grafico_log.jpeg" width="480"> |
+
+| Escala normal | Escala logarítmica |
+|--------------|-------------------|
+| <img src="src/img/grafico.jpeg" width="500"> | <img src="src/img/grafico_log.jpeg" width="500"> |
 
 > Os resultados mostram que o algoritmo mantém uma performance estável mesmo para números extremamente grandes, tornando-o ideal para aplicações criptográficas.
 
