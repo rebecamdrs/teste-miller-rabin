@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="img/banner.png" alt="Banner" width="100%">
+  <img src="src/img/banner.png" alt="Banner" width="100%">
 </p>
 
 # Teste de Primalidade de Miller-Rabin
 
 Este repositório apresenta uma implementação do Teste de Miller-Rabin, um dos algoritmos probabilísticos mais importantes da Teoria dos Números e da Criptografia Moderna. O projeto foi desenvolvido como atividade da disciplina Fundamentos de Matemática para Ciência da Computação II (FMCC II) da UFCG.
 
-**🔗 Vídeo sobre o projeto: https://youtu.be/HwLEF9sOifg**
+**🔗 Vídeo explicativo: https://youtu.be/HwLEF9sOifg**
 
 ## Sobre o Projeto
 
@@ -25,6 +25,14 @@ A probabilidade de um número composto ser classificado como primo é menor que:
 - **Aplicação prática real**
 O teste é utilizado diretamente na geração de chaves do algoritmo RSA.
 
+## ⚙️ Funcionalidades
+
+  1. Implementação completa do teste de Miller-Rabin
+  2. Pré-teste de primalidade para otimizar o desempenho
+  3. Benchmark de performance para números grandes
+  4. Testes de estresse
+  5. Testes com números de Carmichael (para analisar falsos positivos)
+  6. Geração de gráficos de desempenho
 
 ## 📘 Fundamentos Matemáticos
 O teste baseia-se na decomposição de um número ímpar $n-1$ na forma:
@@ -46,28 +54,46 @@ Para avaliar a eficiência da implementação, foram realizados testes de desemp
 - **Comparação de etapas**
   Diferença de desempenho entre o pré-teste de primalidade e o teste de Miller-Rabin.
 
+| <img src="src/img/grafico.jpeg" width="480"> | <img src="src/img/grafico_log.jpeg" width="480"> |
+
 > Os resultados mostram que o algoritmo mantém uma performance estável mesmo para números extremamente grandes, tornando-o ideal para aplicações criptográficas.
 
 ## ▶️ Como Executar
 
-### Clonar o repositório
+### 1. Clone o repositório
 
 ```bash
 git clone https://github.com/rebecamdrs/teste-miller-rabin.git
 cd teste-miller-rabin
 ```
 
-### Instalar as dependências
+### 2. Instale as dependências
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Executar o programa
+### 3. Execute o programa
 
 ```bash
 cd src/teste_primalidade
 python main.py
+```
+
+## 🧪 Executar os testes
+
+### Benchmark de performance
+```bash
+python testes/benchmark.py
+```
+
+### Teste de estresse
+```bash
+python testes/teste_estresse.py
+```
+### Testes básicos (primos conhecidos + Carmichael)
+```bash
+python testes/testes_basicos.py
 ```
 
 ## 📜 Créditos
