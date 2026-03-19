@@ -1,4 +1,4 @@
-# Teste de Primalidade de Miller-Rabin
+# 🔐 Teste de Primalidade de Miller-Rabin
 
 Este repositório apresenta uma implementação do Teste de Miller-Rabin, um dos algoritmos probabilísticos mais importantes da Teoria dos Números e da Criptografia Moderna. O projeto foi desenvolvido como atividade da disciplina Fundamentos de Matemática para Ciência da Computação II (FMCC II) da UFCG.
 
