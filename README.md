@@ -12,14 +12,14 @@ Diferente de métodos simples, como divisão por tentativa, esse algoritmo é ca
 ### Por que utilizar o Miller-Rabin?
 
 - **Alta eficiência**
-Muito mais rápido do que testes determinísticos para números grandes.
+  Muito mais rápido do que testes determinísticos para números grandes.
 
 - **Confiabilidade controlada**
-O erro do algoritmo depende apenas do número de iterações ($k$).
-A probabilidade de um número composto ser classificado como primo é menor que: $4^{-k}$
+  O erro do algoritmo depende apenas do número de iterações ($k$).
+  A probabilidade de um número composto ser classificado como primo é menor que: $4^{-k}$
 
 - **Aplicação prática real**
-O teste é utilizado diretamente na geração de chaves do algoritmo RSA.
+  O teste é utilizado diretamente na geração de chaves do algoritmo RSA.
 
 ## ⚙️ Funcionalidades
 
