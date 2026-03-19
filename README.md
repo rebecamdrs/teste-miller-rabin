@@ -1,47 +1,75 @@
-# Teste de Primalidade Miller-Rabin
-Este repositório contém uma implementação do Teste de Miller-Rabin, um algoritmo probabilístico essencial na teoria dos números e criptografia moderna. Desenvolvido como projeto para a disciplina de Fundamentos de Matemática para Ciência da Computação 2 (FMCC 2) na UFCG.
+# Teste de Primalidade de Miller-Rabin
 
-## 💡 Sobre o Projeto
-O Teste de Miller-Rabin é utilizado para determinar se um número é provavelmente primo. Diferente de métodos de divisão por tentativa, ele consegue lidar com números extremamente grandes em tempo polinomial, sendo uma peça fundamental no algoritmo.
+Este repositório apresenta uma implementação do **Teste de Miller-Rabin**, um dos algoritmos probabilísticos mais importantes da **Teoria dos Números** e da **Criptografia Moderna**. O projeto foi desenvolvido como atividade da disciplina **Fundamentos de Matemática para Ciência da Computação II (FMCC II)** da UFCG.
 
-### Por que Miller-Rabin?
+## 🔹 Sobre o Projeto
 
-- **Eficiência:** Muito mais rápido que testes determinísticos.
+O Teste de Miller-Rabin é utilizado para verificar se um número é provavelmente primo.
+Diferente de métodos simples, como divisão por tentativa, esse algoritmo é capaz de trabalhar com números extremamente grandes (*Big Integers*) de forma rápida e eficiente. Por isso, ele é amplamente utilizado em aplicações reais, principalmente na **geração de chaves criptográficas**.
 
-- **Confiabilidade:** O erro do algoritmo é controlado pelo número de iterações ($k$). A probabilidade de um número composto ser declarado primo é menor que $4^{-k}$.
-  
-- **Aplicação Real:** É a base para a geração de chaves no algoritmo **RSA**.
+### Por que utilizar o Miller-Rabin?
 
-## 🧬 Fundamentos Matemáticos
+- **Alta eficiência**
+Muito mais rápido do que testes determinísticos para números grandes.
 
+- **Confiabilidade controlada**
+O erro do algoritmo depende apenas do número de iterações ($k$).
+A probabilidade de um número composto ser classificado como primo é menor que: $4^{-k}$
+
+- **Aplicação prática real**
+O teste é utilizado diretamente na geração de chaves do algoritmo RSA.
+
+
+## 📘 Fundamentos Matemáticos
 O teste baseia-se na decomposição de um número ímpar $n-1$ na forma:
 $$n - 1 = 2^s \cdot d$$
-Onde $d$ é ímpar. Para um número ser considerado primo em relação a uma base $a$ (testemunha), uma das seguintes condições de congruência deve ser satisfeita:
+Onde $d$ é ímpar.
+
+Para um número ser considerado primo em relação a uma base $a$ (testemunha), uma das seguintes condições de congruência deve ser satisfeita:
 
 1.  $a^d \equiv 1 \pmod{n}$
 2.  $a^{2^r \cdot d} \equiv -1 \pmod{n}$ para algum $0 \le r < s$
 
-## 📊 Benchmark e Performance
+## 📊 Benchmark e Análise de Performance
 
-Para validar a eficiência da implementação, foram realizados testes de performance comparando diferentes cenários:
+Para avaliar a eficiência da implementação, foram realizados testes de desempenho considerando:
+- **Escalabilidade**
+  Análise do tempo de execução conforme aumenta o número de bits do número testado.
+- **Precisão vs Tempo**
+  Estudo do impacto do número de iterações ($k$) no tempo total de execução.
+- **Comparação de etapas**
+  Diferença de desempenho entre o pré-teste de primalidade e o teste de Miller-Rabin.
 
-- **Escalabilidade:** Avaliação do tempo de resposta conforme o número de bits do candidato a primo aumenta.
+> Os resultados mostram que o algoritmo mantém uma performance estável mesmo para números extremamente grandes, tornando-o ideal para aplicações criptográficas.
 
-- **Precisão vs. Tempo:** Análise do impacto do número de iterações ($k$) no tempo total de execução.
+## ✅ Como Executar
 
-- **Comparação:** gráficos que mostram a diferença no tempo de execução no pre-teste e no teste de Miller-Rabin.
+### Clonar o repositório
 
-> Os resultados demonstram que o Miller-Rabin mantém uma performance estável mesmo para números que excedem a capacidade de tipos primitivos inteiros padrão, sendo ideal para aplicações em larga escala.
+```bash
+git clone https://github.com/rebecamdrs/teste-miller-rabin.git
+cd teste-miller-rabin
+```
 
-### 🎓 Créditos
-Gabriela Ramalho, 
-Lara Soares, 
-Murilo Jadson, 
-Rebeca Medeiros,
-Stefany Alves
+### Instalar as dependências
 
-**Disciplina:** FMCC2
+```bash
+pip install -r requirements.txt
+```
 
-**Professor:** Tiago Massoni
+### Executar o programa
 
-**Instituição:** Universidade Federal de Campina Grande (UFCG) 
+```bash
+cd src/teste_primalidade
+python main.py
+```
+
+## 👥 Colaboradores
+
+| Nome             | GitHub                                                     |
+| ---------------- | ---------------------------------------------------------- |
+| Gabriela Ramalho | [@gabriela-gabriela](https://github.com/gabriela-gabriela) |
+| Lara Soares      | [@lgiovannadms](https://github.com/lgiovannadms)           |
+| Murilo Jadson    | [@Murilo-Jadson](https://github.com/Murilo-Jadson)         |
+| Rebeca Medeiros  | [@rebecamdrs](https://github.com/rebecamdrs)               |
+| Stefany Alves    | [@stnalves](https://github.com/stnalves)                   |
